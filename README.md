@@ -20,10 +20,13 @@
 
 </div>
 
+> 🐾 想直接用？[兔狲 · 公众号助手（wx-publish-studio）](https://github.com/k7airos/wx-publish-studio) 是自托管的公众号图文工作台：写文章、配样式与封面、预览后存入你自己的公众号草稿箱，`docker compose up` 一条命令起全套。其中的文章封面由 Typeset Studio 渲染。
+
 ## 生态与使用者
 
 | 项目 | 与 Typeset Studio 的关系 |
 | --- | --- |
+| [wx-publish-studio](https://github.com/k7airos/wx-publish-studio) | 自托管的公众号图文工作台，用 Typeset Studio 渲染文章封面，无需单独部署本服务 |
 | [zzhub-pipeline](https://github.com/k7airos/zzhub-pipeline) · [`@akairos/pipeline`](https://www.npmjs.com/package/@akairos/pipeline) | 当前图片插件消费方，通过 `@akairos/typeset-studio/adapter` 生成文章封面和贴图页面；负责状态机、素材上传与草稿发布 |
 | [myno](https://github.com/k7airos/myno) | 配套正文编辑与排版工作台；生成可复制的微信 HTML 和样式 JSON，与本包的 PNG 渲染职责互补，互不依赖 |
 | [Obsidian 微信发布插件](https://github.com/k7airos/obsidian-wechat-publish) | 通过本机 Pipeline 间接使用已配置的图片渲染器，不直接依赖本包 |
@@ -354,9 +357,7 @@ bun run build
 
 ---
 
-## 📄 开源协议
-
-本项目基于 [MIT 协议](./LICENSE) 开源。
+## 🔌 鉴权、模板与宿主集成
 
 ### 鉴权与 pipeline 参数
 
@@ -454,3 +455,9 @@ zzp render --state /absolute/path/workflow-state.json \
 `@akairos/typeset-studio/server-config` 使用 `validateTypesetTemplateConfig`
 验证原生配置，再按素材归属解析实际字节。`BUILTIN_PRESETS` 同时从这两个入口
 导出；独立 Studio 的模板库和运行方式保持原有行为。
+
+---
+
+## 📄 开源协议
+
+本项目基于 [MIT 协议](./LICENSE) 开源。
